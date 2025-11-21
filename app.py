@@ -16,7 +16,7 @@ def add():
 
 @app.route('/done/<int:index>')
 def done(index):
-    tasks.pop(index)     # remove the task when completed
+    tasks.pop(index)     
     return redirect('/')
 
 @app.route('/edit/<int:index>')
