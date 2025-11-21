@@ -19,5 +19,17 @@ def done(index):
     tasks.pop(index)     # remove the task when completed
     return redirect('/')
 
+@app.route('/edit/<int:index>')
+def edit(index):
+    task = tasks[index]
+    return render_template("edit.html", task=task, index=index)
+
+@app.route('/update/<int:index>', methods=['POST'])
+def update(index):
+    new_task = request.form['task']
+    tasks[index] = new_task
+    return redirect('/')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

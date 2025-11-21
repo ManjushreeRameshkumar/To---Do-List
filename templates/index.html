@@ -25,7 +25,17 @@
             width: 100px;
             border: 3px solid #7FB4E7;
             border-radius: 4px;
+            background-color:  #75b0e8;
             
+        }
+        button:hover{
+            background-color:#4396e4 ;
+        }
+        h2{
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
         }
 
 
@@ -45,6 +55,7 @@
                 <li>
                     {{ t }}
                     <a href="/done/{{ loop.index0 }}"> ✔ Done</a>
+                    <a href="/edit/{{ loop.index0 }}">✎ Edit</a>
                 </li>
             {% endfor %}
         </ul>
